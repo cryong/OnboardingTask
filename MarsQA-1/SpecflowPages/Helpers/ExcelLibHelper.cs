@@ -12,10 +12,10 @@ namespace MarsQA_1.Helpers
 {
     class ExcelLibHelper
     {
-     #region Excel Read Data
+        #region Excel Read Data
 
 
-    private static readonly List<Datacollection> DataCol = new List<Datacollection>();
+        private static readonly List<Datacollection> DataCol = new List<Datacollection>();
 
         // The following code helps to quit the windows in which you only need to pass the name of excel.
 

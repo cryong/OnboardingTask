@@ -79,6 +79,9 @@
     <Reference Include="RelevantCodes.ExtentReports, Version=1.4.9.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ExtentReports.2.41.0\lib\RelevantCodes.ExtentReports.dll</HintPath>
     </Reference>
+    <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.3.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
@@ -149,26 +152,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Feature\Login.cs" />
+    <Compile Include="StepDefinitions\Login.cs" />
     <Compile Include="SpecflowPages\Helpers\CommonMethods.cs" />
     <Compile Include="SpecflowPages\Helpers\ConstantHelpers.cs" />
     <Compile Include="SpecflowPages\Helpers\Driver.cs" />
     <Compile Include="SpecflowPages\Helpers\ExcelLibHelper.cs" />
+    <Compile Include="SpecflowPages\Helpers\SyncHelper.cs" />
+    <Compile Include="SpecflowPages\Pages\ProfilePage.cs" />
     <Compile Include="SpecflowPages\Pages\SignIn.cs" />
     <Compile Include="SpecflowPages\Utils\Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataObjects\Certification.cs" />
+    <Compile Include="DataObjects\Education.cs" />
+    <Compile Include="DataObjects\Language.cs" />
+    <Compile Include="DataObjects\Skill.cs" />
+    <Compile Include="DataObjects\SearchableItem.cs" />
+    <Compile Include="StepDefinitions\ProfileSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Feature\AddProfile.feature" />
     <None Include="Feature\Login.feature" />
-    <None Include="SpecflowTests\Data\Data.xlsx" />
+    <None Include="SpecflowTests\Data\Data.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
-    <None Include="SpecflowTests\Data\Mars.xlsx" />
+    <None Include="SpecflowTests\Data\Mars.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SpecflowTests\Bind_Steps\" />
     <Folder Include="TestReports\Screenshots\" />
     <Folder Include="TestReports\Test_files\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SpecflowTests\ReportConfig\html-config.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

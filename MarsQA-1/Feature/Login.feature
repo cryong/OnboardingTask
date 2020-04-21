@@ -1,8 +1,8 @@
 ﻿Feature: Login
-	In order to avoid silly mistakes
-	As a math idiot
-	I want to be told the sum of two numbers
+	As a user of the application
+	I want the feature to login
+	So that I can access the application.
 
-@mytag
+@ignore
 Scenario: Login to website
 	Given I login to the website
